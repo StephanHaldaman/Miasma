@@ -41,7 +41,7 @@ MeshRenderer:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 169508}
-  m_Enabled: 0
+  m_Enabled: 1
   m_CastShadows: 1
   m_ReceiveShadows: 1
   m_Materials:
@@ -175,8 +175,8 @@ TrailRenderer:
   m_SortingLayerID: 0
   m_SortingOrder: 0
   m_Time: .0350000001
-  m_StartWidth: .0399999991
-  m_EndWidth: .0250000004
+  m_StartWidth: .0500000007
+  m_EndWidth: 0
   m_Colors:
     m_Color[0]:
       serializedVersion: 2
@@ -275,7 +275,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 0}
       propertyPath: m_StartWidth
-      value: .0399999991
+      value: .0500000007
       objectReference: {fileID: 0}
     - target: {fileID: 0}
       propertyPath: m_MinVertexDistance
@@ -291,11 +291,11 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 0}
       propertyPath: m_EndWidth
-      value: .0250000004
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 0}
       propertyPath: m_Enabled
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 0}
       propertyPath: m_Time
