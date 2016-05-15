@@ -7,6 +7,8 @@ Project("{91A30A64-8F20-5E8E-C719-CB75E28113E0}") = "Miasma", "Assembly-CSharp.c
 EndProject
 Project("{91A30A64-8F20-5E8E-C719-CB75E28113E0}") = "Miasma", "Assembly-CSharp-Editor.csproj", "{ABCE232C-82D1-60D4-C706-2BCDB7E1DDB0}"
 EndProject
+Project("{91A30A64-8F20-5E8E-C719-CB75E28113E0}") = "Miasma", "Assembly-UnityScript.unityproj", "{CDD22613-BC88-F850-FE45-89B51693A304}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -25,11 +27,15 @@ Global
 		{ABCE232C-82D1-60D4-C706-2BCDB7E1DDB0}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{ABCE232C-82D1-60D4-C706-2BCDB7E1DDB0}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{ABCE232C-82D1-60D4-C706-2BCDB7E1DDB0}.Release|Any CPU.Build.0 = Release|Any CPU
+		{CDD22613-BC88-F850-FE45-89B51693A304}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{CDD22613-BC88-F850-FE45-89B51693A304}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{CDD22613-BC88-F850-FE45-89B51693A304}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{CDD22613-BC88-F850-FE45-89B51693A304}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
 	EndGlobalSection
-																																																																																																																	GlobalSection(MonoDevelopProperties) = preSolution
+																																																																																																																								GlobalSection(MonoDevelopProperties) = preSolution
 		StartupItem = Assembly-CSharp.csproj
 		Policies = $0
 		$0.TextStylePolicy = $1
@@ -48,4 +54,5 @@ Global
 		$3.inheritsScope = text/plain
 		$3.scope = text/plain
 	EndGlobalSection
+
 EndGlobal
