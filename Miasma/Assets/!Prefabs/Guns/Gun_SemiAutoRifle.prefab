@@ -166,7 +166,7 @@ GameObject:
   - 64: {fileID: 6455632}
   - 114: {fileID: 11490870}
   m_Layer: 0
-  m_Name: Gun_SemiAutoRifle 1
+  m_Name: Gun_SemiAutoRifle
   m_TagString: Weapon
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -544,7 +544,7 @@ MeshRenderer:
   m_CastShadows: 1
   m_ReceiveShadows: 1
   m_Materials:
-  - {fileID: 2100000, guid: 2d72e42f3d2f53f4abcfdd8671ab1eea, type: 2}
+  - {fileID: 2100000, guid: d54452e4f5946dd4ca4c4d860906ec43, type: 2}
   m_SubsetIndices: 
   m_StaticBatchRoot: {fileID: 0}
   m_UseLightProbes: 0
@@ -592,7 +592,7 @@ MeshRenderer:
   m_CastShadows: 1
   m_ReceiveShadows: 1
   m_Materials:
-  - {fileID: 2100000, guid: 2d72e42f3d2f53f4abcfdd8671ab1eea, type: 2}
+  - {fileID: 2100000, guid: d54452e4f5946dd4ca4c4d860906ec43, type: 2}
   m_SubsetIndices: 
   m_StaticBatchRoot: {fileID: 0}
   m_UseLightProbes: 0
@@ -688,7 +688,7 @@ MeshRenderer:
   m_CastShadows: 1
   m_ReceiveShadows: 1
   m_Materials:
-  - {fileID: 2100000, guid: 2d72e42f3d2f53f4abcfdd8671ab1eea, type: 2}
+  - {fileID: 2100000, guid: d54452e4f5946dd4ca4c4d860906ec43, type: 2}
   m_SubsetIndices: 
   m_StaticBatchRoot: {fileID: 0}
   m_UseLightProbes: 0
@@ -760,7 +760,7 @@ MeshRenderer:
   m_CastShadows: 1
   m_ReceiveShadows: 1
   m_Materials:
-  - {fileID: 2100000, guid: 2d72e42f3d2f53f4abcfdd8671ab1eea, type: 2}
+  - {fileID: 2100000, guid: d54452e4f5946dd4ca4c4d860906ec43, type: 2}
   m_SubsetIndices: 
   m_StaticBatchRoot: {fileID: 0}
   m_UseLightProbes: 0
@@ -784,7 +784,7 @@ MeshRenderer:
   m_CastShadows: 1
   m_ReceiveShadows: 1
   m_Materials:
-  - {fileID: 2100000, guid: 2d72e42f3d2f53f4abcfdd8671ab1eea, type: 2}
+  - {fileID: 2100000, guid: d54452e4f5946dd4ca4c4d860906ec43, type: 2}
   m_SubsetIndices: 
   m_StaticBatchRoot: {fileID: 0}
   m_UseLightProbes: 0
