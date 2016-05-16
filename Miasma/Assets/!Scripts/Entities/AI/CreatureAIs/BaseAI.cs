@@ -9,13 +9,11 @@ public class BaseAI : Entity {
     public PassiveEffect passiveEffect;
     public GameObject[] abilities;
 
-    public bool inCombat;
     public Vector3 directionOfInterest;
-    public float playerDetection;
     public float alertness;
 
     public Vector3 lastTargetLocation;
-    public int targetIndex = int.MaxValue;
+    public int targetIndex = int.MaxValue; //Maybe find a better way of setting a "Null" value
     public AwarenessData[] entityData;
     
     protected AIBehaviour[] behaviours;
@@ -26,18 +24,8 @@ public class BaseAI : Entity {
 
     protected void UpdateBehavior()
     {
-        //If the AI has a target then it is in combat
-        if (targetIndex != int.MaxValue)
-        {
-            inCombat = true;
-        }
-        else
-        {
-            inCombat = false;
-        }
-
         //WORK IN PROGRESS
-        if (inCombat)
+        if (targetIndex != int.MaxValue)
         {
             behaviours[1].Behave();
         }
@@ -110,13 +98,14 @@ public class BaseAI : Entity {
             //Deplete Awareness
             if (_deltaAwareness <= 0)
             {
-                entityData[i].awareness = Mathf.MoveTowards(entityData[i].awareness, 0, 1 * Time.deltaTime);
+                entityData[i].awareness = Mathf.MoveTowards(entityData[i].awareness, 0, 2 * Time.deltaTime);
             }
         }
     }
 
     public void UpdateTarget() 
     {
+        //Find closest target if no target is available
         if (targetIndex == int.MaxValue)
         {
             float _distance = float.MaxValue;
@@ -131,12 +120,19 @@ public class BaseAI : Entity {
             }
         }
 
-        //Set last seen location
         if (targetIndex != int.MaxValue)
         {
+
+            //Set last seen location
             if (entityData[targetIndex].isAware)
             {
                 lastTargetLocation = entityData[targetIndex].entity.transform.position;
+            }
+
+            //Remove target if entity is no longer aware of it
+            if (entityData[targetIndex].awareness <= 0)
+            {
+                targetIndex = int.MaxValue;
             }
 
             print(entityData[targetIndex].awareness);
