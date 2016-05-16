@@ -8,7 +8,9 @@ public class AIPatrol : AIBehaviour
     public int patrolIndex = 0;
 
 	// Use this for initialization
-	void Awake () {
+    void Awake()
+    {
+        inCombatOnly = false;
         nav = GetComponent<NavMeshAgent>();
         ai = GetComponent<BaseAI>();
 	}

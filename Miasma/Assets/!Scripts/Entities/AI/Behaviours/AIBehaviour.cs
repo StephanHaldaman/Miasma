@@ -3,8 +3,8 @@ using System.Collections;
 
 public abstract class AIBehaviour : MonoBehaviour
 {
-    public bool inCombatOnly;
     public float agroRequirement;
+    protected bool inCombatOnly;
     protected NavMeshAgent nav;
     protected BaseAI ai;
 

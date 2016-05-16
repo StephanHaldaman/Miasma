@@ -15,5 +15,6 @@ public class WolfAI : BaseAI {
 	void Update () {
         UpdateBehavior();
         UpdateEntityAwareness();
+        UpdateTarget();
 	}
 }
