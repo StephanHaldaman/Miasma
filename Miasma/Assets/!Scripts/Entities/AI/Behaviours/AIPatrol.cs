@@ -11,7 +11,7 @@ public class AIPatrol : AIBehaviour
     void Awake()
     {
         inCombatOnly = false;
-        nav = GetComponent<NavMeshAgent>();
+        nav = GetComponentInChildren<NavMeshAgent>();
         ai = GetComponent<BaseAI>();
 	}
 	

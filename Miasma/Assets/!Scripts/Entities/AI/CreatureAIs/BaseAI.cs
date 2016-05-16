@@ -6,11 +6,11 @@ public class BaseAI : Entity {
     public float agro;
     public float activeSpeed;
     public float passiveSpeed;
+    public float alertness;
     public PassiveEffect passiveEffect;
     public GameObject[] abilities;
 
     public Vector3 directionOfInterest;
-    public float alertness;
 
     public Vector3 lastTargetLocation;
     public int targetIndex = int.MaxValue; //Maybe find a better way of setting a "Null" value
@@ -54,17 +54,15 @@ public class BaseAI : Entity {
 
     public void UpdateEntityAwareness()
     {
-
         for (int i = 0; i < entityData.Length; i++) //LAST WORKED ON THING
         {
-
             RaycastHit hit;
             //Check for visibility
             if (Physics.Raycast(transform.position, (entityData[i].entity.transform.position - transform.position) + entityData[i].entity.headOffset, out hit)
                 || Physics.Raycast(transform.position, (entityData[i].entity.transform.position - transform.position) + entityData[i].entity.legsOffset, out hit))
             {
                 //NEEDS BETTER DETECTION METHOD
-                if (hit.collider.GetComponentInParent<Entity>() == entityData[i].entity || hit.collider.GetComponent<Entity>() == entityData[i].entity)
+                if (hit.collider.GetComponentInParent<Entity>() == entityData[i].entity)
                 {
                     //Determine how much awareness is gained per second based on distance
                     _deltaAwareness = (alertness / Vector3.Distance(transform.position, entityData[i].entity.transform.position)) * Time.deltaTime;
@@ -93,6 +91,11 @@ public class BaseAI : Entity {
                     //Flatline change in awareness
                     _deltaAwareness = 0;
                 }
+            }
+            else
+            {
+                //Flatline change in awareness
+                _deltaAwareness = 0;
             }
 
             //Deplete Awareness
