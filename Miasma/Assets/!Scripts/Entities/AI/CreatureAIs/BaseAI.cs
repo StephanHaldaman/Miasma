@@ -8,15 +8,16 @@ public class BaseAI : Entity {
     public float passiveSpeed;
     public float alertness;
     public PassiveEffect passiveEffect;
-    public GameObject[] abilities;
 
     public Vector3 directionOfInterest;
 
     public Vector3 lastTargetLocation;
     public int targetIndex = int.MaxValue; //Maybe find a better way of setting a "Null" value
+    public float targetDeltaAngle;
     public AwarenessData[] entityData;
-    
+
     protected AIBehaviour[] behaviours;
+    public Ability[] abilities;
 
     protected NavMeshAgent nav;
 
@@ -67,9 +68,9 @@ public class BaseAI : Entity {
                     //Determine how much awareness is gained per second based on distance
                     _deltaAwareness = (alertness / Vector3.Distance(transform.position, entityData[i].entity.transform.position)) * Time.deltaTime;
                     //Find delta-angle between the directional angle and the entities current heading
-                    float _deltaAngle = Mathf.DeltaAngle(Quaternion.LookRotation((entityData[i].entity.transform.position - transform.position)).eulerAngles.y, transform.eulerAngles.y);
+                    targetDeltaAngle = Mathf.Abs(Mathf.DeltaAngle(Quaternion.LookRotation((entityData[i].entity.transform.position - transform.position)).eulerAngles.y, transform.eulerAngles.y));
                     //Multiply awareness based on view of target
-                    _deltaAwareness *= Mathf.Clamp(Mathf.Cos(Mathf.Abs(_deltaAngle) * Mathf.Deg2Rad), 0, 1);
+                    _deltaAwareness *= Mathf.Clamp(Mathf.Cos(targetDeltaAngle * Mathf.Deg2Rad), 0, 1);
                     //Don't let awareness past 100
                     entityData[i].awareness = Mathf.MoveTowards(entityData[i].awareness, 100, _deltaAwareness * entityData[i].entity.visibility);
 
