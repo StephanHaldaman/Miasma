@@ -23,7 +23,9 @@ public class PlayerGun : MonoBehaviour {
 	private bool ShotTrigger;
 	private float NextFireTime;
 
-	public int MagazineCount;
+	public int MagCount_Pellet;
+	public int MagCount_Bullet;
+	public int MagCount_Slug;
 
 	//move to gun
 	//public Transform myBarrel;
@@ -191,25 +193,38 @@ public class PlayerGun : MonoBehaviour {
 	}
 
 	void Reload(){
-		if (MagazineCount > 0) {
+		GunProperties gunProps = HeldGun.GetComponent<GunProperties> ();
+
+		if(MagCount_Pellet > 0 && gunProps.MyMagType.name.Contains("Pellet")
+		   || MagCount_Bullet > 0 && gunProps.MyMagType.name.Contains("Bullet")
+		   || MagCount_Slug > 0 && gunProps.MyMagType.name.Contains("Slug")){
 			IsReloading = true;
 			Invoke ("ReloadEnd", 1f);
 
 			//magazine animation
-			HeldGun.GetComponent<GunProperties>().MyMagazine.transform.parent = null;
-			HeldGun.GetComponent<GunProperties>().MyMagazine.AddComponent<Rigidbody>();
-			GameObject mag = Instantiate(HeldGun.GetComponent<GunProperties>().MyMagType, transform.position, transform.rotation) as GameObject;
-			HeldGun.GetComponent<GunProperties>().MyMagazine = mag;
-			mag.transform.parent = HeldGun.GetComponent<GunProperties>().Pos_Mag;
+			gunProps.MyMagazine.transform.parent = null;
+			gunProps.MyMagazine.AddComponent<Rigidbody>();
+			GameObject mag = Instantiate(gunProps.MyMagType, transform.position, transform.rotation) as GameObject;
+			gunProps.MyMagazine = mag;
+			mag.transform.parent = gunProps.Pos_Mag;
 			mag.transform.DOLocalMove(Vector3.zero, 0.9f);
 			mag.transform.DOLocalRotate(Vector3.zero, 0.5f);
 		}
 	}
 
 	void ReloadEnd(){
+		GunProperties gunProps = HeldGun.GetComponent<GunProperties> ();
+
+		if (gunProps.MyMagType.name.Contains ("Pellet")) {
+			MagCount_Pellet -= 1;
+		} else if (gunProps.MyMagType.name.Contains ("Bullet")) {
+			MagCount_Bullet -= 1;
+		} else if (gunProps.MyMagType.name.Contains ("Slug")) {
+			MagCount_Slug -= 1;
+		}
 		HeldGun.GetComponent<GunProperties>().Gun_MagSize = HeldGun.GetComponent<GunProperties>().Gun_MagSizeTotal;
-		MagazineCount -= 1;
 		IsReloading = false;
+		GameObject.FindGameObjectWithTag ("Canvas").GetComponent<GameUI> ().UpdateInfo ();
 	}
 
 	void CreateGunSmoke(){

@@ -10,6 +10,7 @@ TagManager:
   - AnimalCollider
   - Entity
   - EntityPlayer
+  - Canvas
   layers:
   - Default
   - TransparentFX
