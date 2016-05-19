@@ -241,7 +241,7 @@ MonoBehaviour:
   CreateOnDestroy: {fileID: 145292, guid: e74c014e77f44ec45804d6a559968b55, type: 2}
   sfx_Flying: {fileID: 0}
   sfx_Ricochet: {fileID: 8300000, guid: 7326fdf6b6d0ee944af02e83ccf39320, type: 3}
-  Damage: .5
+  Damage: .300000012
 --- !u!135 &13559912
 SphereCollider:
   m_ObjectHideFlags: 1
@@ -407,7 +407,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 0}
       propertyPath: Damage
-      value: .5
+      value: .300000012
       objectReference: {fileID: 0}
     - target: {fileID: 0}
       propertyPath: m_Color.g
