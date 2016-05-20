@@ -165,6 +165,7 @@ GameObject:
   - 54: {fileID: 5428648}
   - 64: {fileID: 6455632}
   - 114: {fileID: 11490870}
+  - 114: {fileID: 11477082}
   m_Layer: 0
   m_Name: Gun_SemiAutoRifle
   m_TagString: Weapon
@@ -1007,6 +1008,18 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _entityType: 4
+--- !u!114 &11477082
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 150742}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 588db6edc1824794493955872fbbcc44, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ItemName: Rifle
 --- !u!114 &11490870
 MonoBehaviour:
   m_ObjectHideFlags: 1

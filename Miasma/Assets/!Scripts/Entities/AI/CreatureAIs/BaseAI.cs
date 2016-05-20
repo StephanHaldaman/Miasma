@@ -17,7 +17,7 @@ public class BaseAI : Entity {
     public AwarenessData[] entityData;
 
     protected AIBehaviour[] behaviours;
-    public Ability[] abilities;
+   // public Ability[] abilities;
 
     protected NavMeshAgent nav;
 

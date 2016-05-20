@@ -355,6 +355,7 @@ GameObject:
   - 114: {fileID: 11467140}
   - 54: {fileID: 5406670}
   - 64: {fileID: 6465330}
+  - 114: {fileID: 11410954}
   m_Layer: 0
   m_Name: Gun_SubMachineGun
   m_TagString: Weapon
@@ -2561,6 +2562,18 @@ MonoBehaviour:
   m_selectedFaces: 
   m_SelectedEdges: []
   m_selectedTriangles: 
+--- !u!114 &11410954
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 169836}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 588db6edc1824794493955872fbbcc44, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ItemName: Sub Machine Gun
 --- !u!114 &11455574
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -2927,8 +2940,10 @@ MonoBehaviour:
   Gun_FireRate: .100000001
   Gun_MagSizeTotal: 42
   Gun_MagSize: 42
-  Bullet_xSpin: 1.5
-  Bullet_ySpin: 1
+  Bullet_xSpin: 1
+  Bullet_ySpin: .5
+  Gun_xRecoil: 1.5
+  Gun_yRecoil: 2
   sfx_Shot: {fileID: 8300000, guid: d46d973cffa107342ad558fb1c82d50e, type: 3}
 --- !u!114 &11473082
 MonoBehaviour:

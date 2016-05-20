@@ -25,9 +25,9 @@ public class PlayerGun : MonoBehaviour {
 	private bool ShotTrigger;
 	private float NextFireTime;
 
-	public int MagCount_Pellet;
-	public int MagCount_Bullet;
-	public int MagCount_Slug;
+	//public int MagCount_Pellet;
+	//public int MagCount_Bullet;
+	//public int MagCount_Slug;
 
 	//move to gun
 	//public Transform myBarrel;
@@ -65,7 +65,7 @@ public class PlayerGun : MonoBehaviour {
 			Reload();
 		}
 
-		WeaponGet ();
+		//WeaponGet ();
 
 		if (Input.GetButton ("Fire2")) {
 			if(!AimMode){
@@ -108,7 +108,7 @@ public class PlayerGun : MonoBehaviour {
 		AimMode = false;
 	}
 
-	void WeaponGet () {
+	/*void WeaponGet () {
 		if (Input.GetKeyDown (KeyCode.E)) {
 			RaycastHit hit;
 			if (HeldGun == null) {
@@ -134,7 +134,7 @@ public class PlayerGun : MonoBehaviour {
 				HeldGun = null;
 			}
 		}
-	}
+	}*/
 
 	void Shoot () {
 		GunProperties gun = HeldGun.GetComponent<GunProperties>();
@@ -198,10 +198,11 @@ public class PlayerGun : MonoBehaviour {
 
 	void Reload(){
 		GunProperties gunProps = HeldGun.GetComponent<GunProperties> ();
+		PlayerGear gear = GetComponent<PlayerGear> ();
 
-		if(MagCount_Pellet > 0 && gunProps.MyMagType.name.Contains("Pellet")
-		   || MagCount_Bullet > 0 && gunProps.MyMagType.name.Contains("Bullet")
-		   || MagCount_Slug > 0 && gunProps.MyMagType.name.Contains("Slug")){
+		if(gear.MagCount_Pellet > 0 && gunProps.MyMagType.name.Contains("Pellet")
+		   || gear.MagCount_Bullet > 0 && gunProps.MyMagType.name.Contains("Bullet")
+		   || gear.MagCount_Slug > 0 && gunProps.MyMagType.name.Contains("Slug")){
 			IsReloading = true;
 			Invoke ("ReloadEnd", 1f);
 
@@ -218,13 +219,14 @@ public class PlayerGun : MonoBehaviour {
 
 	void ReloadEnd(){
 		GunProperties gunProps = HeldGun.GetComponent<GunProperties> ();
+		PlayerGear gear = GetComponent<PlayerGear> ();
 
 		if (gunProps.MyMagType.name.Contains ("Pellet")) {
-			MagCount_Pellet -= 1;
+			gear.MagCount_Pellet -= 1;
 		} else if (gunProps.MyMagType.name.Contains ("Bullet")) {
-			MagCount_Bullet -= 1;
+			gear.MagCount_Bullet -= 1;
 		} else if (gunProps.MyMagType.name.Contains ("Slug")) {
-			MagCount_Slug -= 1;
+			gear.MagCount_Slug -= 1;
 		}
 		HeldGun.GetComponent<GunProperties>().Gun_MagSize = HeldGun.GetComponent<GunProperties>().Gun_MagSizeTotal;
 		IsReloading = false;

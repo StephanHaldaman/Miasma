@@ -11,7 +11,7 @@ public class WolfAI : BaseAI {
 
         UpdateEntities();
         behaviours = GetComponents<AIBehaviour>();
-        abilities = GetComponents<Ability>();
+        //abilities = GetComponents<Ability>();
 	}
 	
 	// Update is called once per frame

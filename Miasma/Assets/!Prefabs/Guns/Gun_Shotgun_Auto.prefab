@@ -266,6 +266,7 @@ GameObject:
   - 54: {fileID: 5462620}
   - 64: {fileID: 6498644}
   - 114: {fileID: 11460558}
+  - 114: {fileID: 11433774}
   m_Layer: 0
   m_Name: Gun_Shotgun_Auto
   m_TagString: Weapon
@@ -1056,6 +1057,18 @@ MeshCollider:
   serializedVersion: 2
   m_Convex: 1
   m_Mesh: {fileID: 0}
+--- !u!114 &11433774
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 188668}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 588db6edc1824794493955872fbbcc44, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ItemName: Automatic Shotgun
 --- !u!114 &11438348
 MonoBehaviour:
   m_ObjectHideFlags: 1
