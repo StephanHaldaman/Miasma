@@ -1033,6 +1033,8 @@ MonoBehaviour:
   Gun_MagSize: 8
   Bullet_xSpin: .25
   Bullet_ySpin: .5
+  Gun_xRecoil: 10
+  Gun_yRecoil: 25
   sfx_Shot: {fileID: 8300000, guid: d46d973cffa107342ad558fb1c82d50e, type: 3}
 --- !u!114 &11461656
 MonoBehaviour:

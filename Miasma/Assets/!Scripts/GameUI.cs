@@ -7,7 +7,7 @@ public class GameUI : MonoBehaviour {
 	public Text Text_Mags_Pellet;
 	public Text Text_Mags_Bullet;
 	public Text Text_Mags_Slug;
-
+	
 	// Use this for initialization
 	void Start () {
 		PlayerGun player = GameObject.FindGameObjectWithTag ("EntityPlayer").GetComponent<PlayerGun> ();

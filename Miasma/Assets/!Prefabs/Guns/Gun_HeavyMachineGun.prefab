@@ -1910,11 +1910,13 @@ MonoBehaviour:
   Bullet_Velocity: 2
   Bullet_PerShot: 1
   Gun_FireMode: 1
-  Gun_FireRate: .0500000007
+  Gun_FireRate: .075000003
   Gun_MagSizeTotal: 90
   Gun_MagSize: 90
   Bullet_xSpin: 2
   Bullet_ySpin: 1
+  Gun_xRecoil: 5
+  Gun_yRecoil: 12.5
   sfx_Shot: {fileID: 8300000, guid: d46d973cffa107342ad558fb1c82d50e, type: 3}
 --- !u!114 &11478092
 MonoBehaviour:

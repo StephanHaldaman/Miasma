@@ -381,7 +381,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 150742}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 42.5649986, y: 4.51492548, z: -46.1049995}
+  m_LocalPosition: {x: 43.8040009, y: 4.51492548, z: -46.1049995}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 456544}
@@ -1033,6 +1033,8 @@ MonoBehaviour:
   Gun_MagSize: 30
   Bullet_xSpin: .200000003
   Bullet_ySpin: .200000003
+  Gun_xRecoil: 5
+  Gun_yRecoil: 10
   sfx_Shot: {fileID: 8300000, guid: d46d973cffa107342ad558fb1c82d50e, type: 3}
 --- !u!114 &11496876
 MonoBehaviour:

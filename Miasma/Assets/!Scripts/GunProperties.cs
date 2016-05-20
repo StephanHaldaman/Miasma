@@ -18,6 +18,8 @@ public class GunProperties : MonoBehaviour {
 	public int Gun_MagSize = 30;
 	public float Bullet_xSpin = 0.5f;
 	public float Bullet_ySpin = 0.5f;
+	public float Gun_xRecoil = 1;
+	public float Gun_yRecoil = 1;
 	public AudioClip sfx_Shot;
 
 	// Use this for initialization

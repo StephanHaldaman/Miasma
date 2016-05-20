@@ -1448,7 +1448,7 @@ MeshRenderer:
   m_CastShadows: 1
   m_ReceiveShadows: 1
   m_Materials:
-  - {fileID: 2100000, guid: 148456fbff6d8b0459bcbc0d5b1e53d9, type: 2}
+  - {fileID: 2100000, guid: 4151df75a88aeb5459e54cf8da29127b, type: 2}
   m_SubsetIndices: 
   m_StaticBatchRoot: {fileID: 0}
   m_UseLightProbes: 0
@@ -2247,6 +2247,8 @@ MonoBehaviour:
   Gun_MagSize: 30
   Bullet_xSpin: .25
   Bullet_ySpin: .25
+  Gun_xRecoil: 10
+  Gun_yRecoil: 35
   sfx_Shot: {fileID: 8300000, guid: d46d973cffa107342ad558fb1c82d50e, type: 3}
 --- !u!1001 &100100000
 Prefab:

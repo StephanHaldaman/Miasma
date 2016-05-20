@@ -15,6 +15,8 @@ public class PlayerGun : MonoBehaviour {
 	public Transform Pos_GunAim;
 	private bool AimMode;
 
+
+
 	private bool IsShooting;
 	private bool WasShooting;
 
@@ -35,6 +37,7 @@ public class PlayerGun : MonoBehaviour {
 	private bool IsFiring;
 	
 	private Vector3 targetAngle;
+	public Vector3 targetAngleOffset; //for gun recoil
 	private Vector3 currentAngle;
 	public float rotationSpeed = 1f;
 
@@ -153,6 +156,7 @@ public class PlayerGun : MonoBehaviour {
 						GameObject shell = Instantiate(gun.SpentShell, gun.Pos_Ejecter.position, gun.Pos_Ejecter.rotation) as GameObject;
 						shell.transform.Rotate (new Vector3 (Random.Range (-30, 30), Random.Range (-30, 30), 0));
 						shell.GetComponent<Rigidbody>().AddForce((transform.up+transform.right), ForceMode.Impulse);
+						targetAngleOffset += new Vector3(-gun.Gun_yRecoil, Random.Range(-gun.Gun_xRecoil, gun.Gun_xRecoil), 0);
 						CreateGunSmoke();
 					}
 
@@ -248,14 +252,19 @@ public class PlayerGun : MonoBehaviour {
 				} else {
 					CanFire = true;
 					HeldGun.GetComponent<GunProperties> ().Pos_Barrel.LookAt (hit.point);
-					targetAngle = HeldGun.GetComponent<GunProperties> ().Pos_Barrel.eulerAngles;
+					targetAngle = HeldGun.GetComponent<GunProperties> ().Pos_Barrel.eulerAngles + targetAngleOffset;
 				}
 			} else {
 				CanFire = true;
-				targetAngle = myCamera.transform.eulerAngles;
+				targetAngle = myCamera.transform.eulerAngles + targetAngleOffset;
 			}
 		} else {
-			targetAngle = Pos_GunReloading.eulerAngles;
+			targetAngle = Pos_GunReloading.eulerAngles + targetAngleOffset;
+		}
+
+		if (targetAngleOffset.magnitude != 0f) {
+			targetAngleOffset = Vector3.Lerp(targetAngleOffset, Vector3.zero, HeldGun.GetComponent<GunProperties>().Gun_FireRate*2);
+
 		}
 	}
 	
