@@ -17,11 +17,13 @@ public class PickUp : MonoBehaviour {
 
 	public void OnPickUp(){
 		if (ItemName == "Pellet Mag") {
-			GameObject.FindGameObjectWithTag("EntityPlayer").GetComponent<PlayerGear>().MagCount_Pellet += 1;
+			GameObject.FindGameObjectWithTag ("EntityPlayer").GetComponent<PlayerGear> ().MagCount_Pellet += 1;
 		} else if (ItemName == "Bullet Mag") {
-			GameObject.FindGameObjectWithTag("EntityPlayer").GetComponent<PlayerGear>().MagCount_Bullet += 1;
+			GameObject.FindGameObjectWithTag ("EntityPlayer").GetComponent<PlayerGear> ().MagCount_Bullet += 1;
 		} else if (ItemName == "Slug Mag") {
-			GameObject.FindGameObjectWithTag("EntityPlayer").GetComponent<PlayerGear>().MagCount_Slug += 1;
+			GameObject.FindGameObjectWithTag ("EntityPlayer").GetComponent<PlayerGear> ().MagCount_Slug += 1;
+		} else if (ItemName == "Explosive") {
+			GameObject.FindGameObjectWithTag ("EntityPlayer").GetComponent<PlayerGear> ().TrapCount += 1;
 		}
 		GameObject.FindGameObjectWithTag ("Canvas").GetComponent<GameUI> ().UpdateInfo ();
 		Destroy (this.gameObject);

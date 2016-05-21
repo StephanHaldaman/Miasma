@@ -1,45 +1,43 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!1 &153514
+--- !u!1 &185032
 GameObject:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   serializedVersion: 4
   m_Component:
-  - 4: {fileID: 411672}
-  - 33: {fileID: 3381238}
-  - 23: {fileID: 2340986}
-  - 64: {fileID: 6432478}
-  - 114: {fileID: 11427200}
-  - 114: {fileID: 11402974}
-  - 54: {fileID: 5466452}
-  - 114: {fileID: 11445344}
+  - 4: {fileID: 449646}
+  - 33: {fileID: 3390180}
+  - 23: {fileID: 2378836}
+  - 64: {fileID: 6440004}
+  - 114: {fileID: 11462904}
+  - 114: {fileID: 11477252}
   m_Layer: 0
-  m_Name: Item_Mag_Pellet
-  m_TagString: Item
+  m_Name: Mag_Pellet
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!4 &411672
+--- !u!4 &449646
 Transform:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 153514}
+  m_GameObject: {fileID: 185032}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -9.31000042, y: 1.26199996, z: 4.22900009}
+  m_LocalPosition: {x: -1.75567627, y: .244500041, z: .566955566}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
---- !u!23 &2340986
+--- !u!23 &2378836
 MeshRenderer:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 153514}
+  m_GameObject: {fileID: 185032}
   m_Enabled: 1
   m_CastShadows: 1
   m_ReceiveShadows: 1
@@ -47,7 +45,6 @@ MeshRenderer:
   - {fileID: 2100000, guid: 8d60d8b7ad88be747b626d374f1f803e, type: 2}
   - {fileID: 2100000, guid: 148456fbff6d8b0459bcbc0d5b1e53d9, type: 2}
   - {fileID: 2100000, guid: d28b1e3c70616f64caa71d1460ee85b0, type: 2}
-  - {fileID: 2100000, guid: db9c2c75b9606aa47a8111e670d486d7, type: 2}
   m_SubsetIndices: 
   m_StaticBatchRoot: {fileID: 0}
   m_UseLightProbes: 1
@@ -61,46 +58,43 @@ MeshRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingOrder: 0
---- !u!33 &3381238
+--- !u!33 &3390180
 MeshFilter:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 153514}
+  m_GameObject: {fileID: 185032}
   m_Mesh: {fileID: 0}
---- !u!54 &5466452
-Rigidbody:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 153514}
-  serializedVersion: 2
-  m_Mass: 1
-  m_Drag: 0
-  m_AngularDrag: .0500000007
-  m_UseGravity: 1
-  m_IsKinematic: 0
-  m_Interpolate: 0
-  m_Constraints: 0
-  m_CollisionDetection: 0
---- !u!64 &6432478
+--- !u!64 &6440004
 MeshCollider:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 153514}
+  m_GameObject: {fileID: 185032}
   m_Material: {fileID: 0}
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
   m_Convex: 1
   m_Mesh: {fileID: 0}
---- !u!114 &11402974
+--- !u!114 &11462904
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 153514}
+  m_GameObject: {fileID: 185032}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 16342205, guid: 0472bdc8d6d15384d98f22ee34302f9c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _entityType: 0
+--- !u!114 &11477252
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 185032}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 185759285, guid: 0472bdc8d6d15384d98f22ee34302f9c, type: 3}
@@ -523,7 +517,7 @@ MonoBehaviour:
       justify: 5
       localPivot: {x: 0, y: 0}
       localSize: {x: 0, y: 0}
-    _mat: {fileID: 2100000, guid: db9c2c75b9606aa47a8111e670d486d7, type: 2}
+    _mat: {fileID: 2100000, guid: 8d60d8b7ad88be747b626d374f1f803e, type: 2}
     manualUV: 1
     elementGroup: 0
     textureGroup: 6
@@ -803,7 +797,7 @@ MonoBehaviour:
       justify: 5
       localPivot: {x: 0, y: 0}
       localSize: {x: 0, y: 0}
-    _mat: {fileID: 2100000, guid: db9c2c75b9606aa47a8111e670d486d7, type: 2}
+    _mat: {fileID: 2100000, guid: 8d60d8b7ad88be747b626d374f1f803e, type: 2}
     manualUV: 1
     elementGroup: 0
     textureGroup: 6
@@ -975,7 +969,7 @@ MonoBehaviour:
       justify: 5
       localPivot: {x: 0, y: 0}
       localSize: {x: 0, y: 0}
-    _mat: {fileID: 2100000, guid: db9c2c75b9606aa47a8111e670d486d7, type: 2}
+    _mat: {fileID: 2100000, guid: 8d60d8b7ad88be747b626d374f1f803e, type: 2}
     manualUV: 1
     elementGroup: 0
     textureGroup: 2
@@ -1007,7 +1001,7 @@ MonoBehaviour:
       justify: 5
       localPivot: {x: 0, y: 0}
       localSize: {x: 0, y: 0}
-    _mat: {fileID: 2100000, guid: db9c2c75b9606aa47a8111e670d486d7, type: 2}
+    _mat: {fileID: 2100000, guid: 8d60d8b7ad88be747b626d374f1f803e, type: 2}
     manualUV: 1
     elementGroup: 0
     textureGroup: 1
@@ -1039,7 +1033,7 @@ MonoBehaviour:
       justify: 5
       localPivot: {x: 0, y: 0}
       localSize: {x: 0, y: 0}
-    _mat: {fileID: 2100000, guid: db9c2c75b9606aa47a8111e670d486d7, type: 2}
+    _mat: {fileID: 2100000, guid: 8d60d8b7ad88be747b626d374f1f803e, type: 2}
     manualUV: 1
     elementGroup: 0
     textureGroup: 3
@@ -1071,7 +1065,7 @@ MonoBehaviour:
       justify: 5
       localPivot: {x: 0, y: 0}
       localSize: {x: 0, y: 0}
-    _mat: {fileID: 2100000, guid: db9c2c75b9606aa47a8111e670d486d7, type: 2}
+    _mat: {fileID: 2100000, guid: 8d60d8b7ad88be747b626d374f1f803e, type: 2}
     manualUV: 1
     elementGroup: 0
     textureGroup: 4
@@ -1103,7 +1097,7 @@ MonoBehaviour:
       justify: 5
       localPivot: {x: 0, y: 0}
       localSize: {x: 0, y: 0}
-    _mat: {fileID: 2100000, guid: db9c2c75b9606aa47a8111e670d486d7, type: 2}
+    _mat: {fileID: 2100000, guid: 8d60d8b7ad88be747b626d374f1f803e, type: 2}
     manualUV: 1
     elementGroup: -1
     textureGroup: 5
@@ -2873,30 +2867,6 @@ MonoBehaviour:
   m_selectedFaces: 
   m_SelectedEdges: []
   m_selectedTriangles: 
---- !u!114 &11427200
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 153514}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 16342205, guid: 0472bdc8d6d15384d98f22ee34302f9c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _entityType: 0
---- !u!114 &11445344
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 153514}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 588db6edc1824794493955872fbbcc44, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  ItemName: Pellet Mag
 --- !u!1001 &100100000
 Prefab:
   m_ObjectHideFlags: 1
@@ -2906,5 +2876,5 @@ Prefab:
     m_Modifications: []
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 0}
-  m_RootGameObject: {fileID: 153514}
+  m_RootGameObject: {fileID: 185032}
   m_IsPrefabParent: 1

@@ -6,7 +6,7 @@ Material:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
-  m_Name: Plastic_Green
+  m_Name: Metal_Green
   m_Shader: {fileID: 46, guid: 0000000000000000f000000000000000, type: 0}
   m_ShaderKeywords: 
   m_LightmapFlags: 5
@@ -93,12 +93,12 @@ Material:
         second: .5
       data:
         first:
-          name: _Metallic
-        second: .100000001
-      data:
-        first:
           name: _Parallax
         second: .0199999996
+      data:
+        first:
+          name: _Metallic
+        second: .100000001
       data:
         first:
           name: _ZWrite
@@ -106,7 +106,7 @@ Material:
       data:
         first:
           name: _Glossiness
-        second: .25
+        second: .5
       data:
         first:
           name: _BumpScale

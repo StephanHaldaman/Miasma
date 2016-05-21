@@ -8,8 +8,7 @@ public class PlayerGear : MonoBehaviour {
 	public int MagCount_Pellet;
 	public int MagCount_Bullet;
 	public int MagCount_Slug;
-	public GameObject Grenade_Frag;
-	public GameObject Grenade_Perc;
+	public int TrapCount;
 
 	// Use this for initialization
 	void Start () {
@@ -19,8 +18,8 @@ public class PlayerGear : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
 		if (Input.GetKeyDown (KeyCode.T)) {
-			GameObject grenade = Instantiate(Grenade_Frag, transform.position, transform.rotation) as GameObject;
-			grenade.GetComponent<Rigidbody>().AddForce(myCamera.transform.forward * 20, ForceMode.Impulse);
+			//GameObject grenade = Instantiate(Grenade_Frag, transform.position, transform.rotation) as GameObject;
+			//grenade.GetComponent<Rigidbody>().AddForce(myCamera.transform.forward * 20, ForceMode.Impulse);
 		}
 
 		WeaponGet ();
