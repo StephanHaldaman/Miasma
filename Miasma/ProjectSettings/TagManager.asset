@@ -25,8 +25,8 @@ TagManager:
   - AnimalCollider
   - AnimalPart
   - IgnoreBullets
-  - 
-  - 
+  - Weapon
+  - Magazine
   - 
   - 
   - 
