@@ -32,8 +32,6 @@ public class PlayerGear : MonoBehaviour {
 	void WeaponGet () {
 		GameObject HeldGun = GetComponent<PlayerGun> ().HeldGun;
 
-
-
 		if (Input.GetKeyDown (KeyCode.E)) {
 			RaycastHit hit;
 			if (Physics.Raycast (myCamera.transform.position, myCamera.transform.forward, out hit)) {
