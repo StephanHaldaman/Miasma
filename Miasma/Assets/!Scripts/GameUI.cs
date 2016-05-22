@@ -1,6 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections;
 using UnityEngine.UI;
+using DG.Tweening;
 
 public class GameUI : MonoBehaviour {
 
@@ -19,6 +20,7 @@ public class GameUI : MonoBehaviour {
 		Text_Mags_Slug.text = player.MagCount_Slug.ToString();
 
 		MaxHealth = GameObject.FindGameObjectWithTag ("EntityPlayer").GetComponent<Player> ().health;
+		HealthBeat ();
 	}
 	
 	// Update is called once per frame
@@ -79,5 +81,28 @@ public class GameUI : MonoBehaviour {
 			status.color = Color.red;
 		}
 		
+	}
+
+	private void HealthBeat() {
+		Player plyr = GameObject.FindGameObjectWithTag ("EntityPlayer").GetComponent<Player> ();
+		float healthPercentage = plyr.health / MaxHealth;
+		Image status = HealthIndicator.GetComponent<Image> ();
+		status.transform.localScale = new Vector3 (1, 1, 1);
+		CancelInvoke ();
+		status.transform.DOComplete ();
+
+		if (healthPercentage >= 0.75) {
+			status.transform.DOScale(0.75f, 3);
+			Invoke("HealthBeat", 3);
+		} else if (healthPercentage >= 0.5) {
+			status.transform.DOScale(0.75f, 1);
+			Invoke("HealthBeat", 1);
+		} else if (healthPercentage >= 0.25) {
+			status.transform.DOScale(0.75f, 0.35f);
+			Invoke("HealthBeat", 0.35f);
+		} else {
+			status.transform.DOScale(0.75f, 0.15f);
+			Invoke("HealthBeat", 0.15f);
+		}
 	}
 }
