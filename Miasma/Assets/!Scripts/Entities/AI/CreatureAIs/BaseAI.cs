@@ -7,6 +7,11 @@ public class BaseAI : Entity {
     public float activeSpeed;
     public float passiveSpeed;
     public float alertness;
+
+    public float awarenessAgro;
+    public float calmRate;
+    public float damageAgro;
+
     public PassiveEffect passiveEffect;
 
     public Vector3 directionOfInterest;
@@ -17,23 +22,29 @@ public class BaseAI : Entity {
     public AwarenessData[] entityData;
 
     protected AIBehaviour[] behaviours;
-   // public Ability[] abilities;
+    public Ability[] abilities;
 
     protected NavMeshAgent nav;
 
     private float _deltaAwareness;
+    public int _behaviourIndex;
+    public float _behaviourAgro;
 
     protected void UpdateBehavior()
     {
-        //WORK IN PROGRESS
-        if (targetIndex != int.MaxValue)
+        _behaviourAgro = 0;
+        _behaviourIndex = 0;
+
+        for (int i = 0; i < behaviours.Length; i++)
         {
-            behaviours[1].Behave();
+            if (behaviours[i].agroRequirement <= agro && behaviours[i].agroRequirement > _behaviourAgro)
+            {
+                _behaviourIndex = i;
+                _behaviourAgro = behaviours[i].agroRequirement;
+            }
         }
-        else
-        {
-            behaviours[0].Behave();
-        }
+
+        behaviours[_behaviourIndex].Behave();
     }
 
     public void UpdateEntities() 
@@ -74,16 +85,6 @@ public class BaseAI : Entity {
                     //Don't let awareness past 100
                     entityData[i].awareness = Mathf.MoveTowards(entityData[i].awareness, 100, _deltaAwareness * entityData[i].entity.visibility);
 
-                    //Set Awareness
-                    if (entityData[i].awareness == 100)
-                    {
-                        entityData[i].isAware = true;
-                    }
-                    else
-                    {
-                        entityData[i].isAware = false;
-                    }
-
                     //TESTING
                     print(entityData[i].awareness + "     " + _deltaAwareness / Time.deltaTime);
                 }
@@ -97,6 +98,16 @@ public class BaseAI : Entity {
             {
                 //Flatline change in awareness
                 _deltaAwareness = 0;
+            }
+
+            //Set Awareness
+            if (entityData[i].awareness == 100)
+            {
+                entityData[i].isAware = true;
+            }
+            else
+            {
+                entityData[i].isAware = false;
             }
 
             //Deplete Awareness
@@ -142,5 +153,17 @@ public class BaseAI : Entity {
             print(entityData[targetIndex].awareness);
         }
     }
-    
+
+    public void UpdateAgro() 
+    {
+        // Change agro whether or not target is present
+        if (entityData[targetIndex].isAware)
+        {
+            agro = Mathf.MoveTowards(agro, 100, awarenessAgro * Time.deltaTime);
+        }
+        else
+        {
+            agro = Mathf.MoveTowards(agro, 0, calmRate * Time.deltaTime);
+        }
+    }
 }
