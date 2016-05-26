@@ -6,6 +6,7 @@ public class AnimalPart : MonoBehaviour {
 
 	public GameObject[] myParts;
 	public ParticleSystem particles_BloodSpray;
+	//private Transform Pos_SeverPoint;
 	public float HealthMax = 10;
 	private float Health;
 
@@ -35,6 +36,8 @@ public class AnimalPart : MonoBehaviour {
  						c.thisCollider.transform.parent = null;
  						c.thisCollider.gameObject.AddComponent<Rigidbody>();
  						c.thisCollider.gameObject.GetComponent<Rigidbody>().AddForce(other.collider.GetComponent<Rigidbody>().velocity, ForceMode.Force);
+						ParticleSystem bloodSever = Instantiate(particles_BloodSpray, transform.position, transform.rotation) as ParticleSystem; //create blood at joint
+						bloodSever.transform.parent = c.thisCollider.transform;
  					}
  
  				} else if (c.thisCollider.name.Contains("Core")){
