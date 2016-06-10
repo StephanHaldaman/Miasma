@@ -86,7 +86,7 @@ public class BaseAI : Entity {
                     entityData[i].awareness = Mathf.MoveTowards(entityData[i].awareness, 100, _deltaAwareness * entityData[i].entity.visibility);
 
                     //TESTING
-                    print(entityData[i].awareness + "     " + _deltaAwareness / Time.deltaTime);
+                    //print(entityData[i].awareness + "     " + _deltaAwareness / Time.deltaTime);
                 }
                 else 
                 {
@@ -150,14 +150,15 @@ public class BaseAI : Entity {
                 targetIndex = int.MaxValue;
             }
 
-            print(entityData[targetIndex].awareness);
+            //TESTING
+            //print(entityData[targetIndex].awareness);
         }
     }
 
     public void UpdateAgro() 
     {
         // Change agro whether or not target is present
-        if (entityData[targetIndex].isAware)
+        if (targetIndex != int.MaxValue && entityData[targetIndex].isAware)
         {
             agro = Mathf.MoveTowards(agro, 100, awarenessAgro * Time.deltaTime);
         }
