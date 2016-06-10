@@ -740,7 +740,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 169836}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: .827000022, y: 1.33299994, z: -.271002829}
+  m_LocalPosition: {x: 44.4539986, y: 4.51492548, z: -46.1049995}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 470340}
@@ -8458,7 +8458,7 @@ MonoBehaviour:
   Bullet: {fileID: 169508, guid: f5c68033630f22e4d8980025b7c5d622, type: 2}
   SpentShell: {fileID: 138864, guid: 9756f0fe050e2504aa0ad37eab2bba70, type: 2}
   MyMagazine: {fileID: 0}
-  MyMagType: {fileID: 110172, guid: 8cf0728160ab69847bd1fc13dce93001, type: 2}
+  MyMagType: {fileID: 0}
   Pos_Barrel: {fileID: 470340}
   Pos_Ejecter: {fileID: 446756}
   Pos_Mag: {fileID: 0}
@@ -8473,6 +8473,21 @@ MonoBehaviour:
   Gun_xRecoil: 1.5
   Gun_yRecoil: 2
   sfx_Shot: {fileID: 8300000, guid: d46d973cffa107342ad558fb1c82d50e, type: 3}
+  ShotsBeforeBreak: 10
+  Parts:
+  - {fileID: 111806}
+  - {fileID: 101918}
+  - {fileID: 198608}
+  - {fileID: 121144}
+  - {fileID: 138128}
+  - {fileID: 112898}
+  - {fileID: 147848}
+  - {fileID: 143886}
+  - {fileID: 179766}
+  - {fileID: 173564}
+  - {fileID: 102660}
+  - {fileID: 197836}
+  - {fileID: 118814}
 --- !u!114 &11473082
 MonoBehaviour:
   m_ObjectHideFlags: 1

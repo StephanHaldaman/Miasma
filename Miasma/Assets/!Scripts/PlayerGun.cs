@@ -151,6 +151,7 @@ public class PlayerGun : MonoBehaviour {
 							ShotTrigger = true;
 						}
 						gun.Gun_MagSize -= 1;
+						gun.ShotsBeforeBreak -= 1;
 						sfx.pitch = Random.Range(0.85f,1.15f);
 						sfx.PlayOneShot(gun.sfx_Shot);
 						GameObject shell = Instantiate(gun.SpentShell, gun.Pos_Ejecter.position, gun.Pos_Ejecter.rotation) as GameObject;
@@ -158,6 +159,15 @@ public class PlayerGun : MonoBehaviour {
 						shell.GetComponent<Rigidbody>().AddForce((transform.up+transform.right), ForceMode.Impulse);
 						targetAngleOffset += new Vector3(-gun.Gun_yRecoil, Random.Range(-gun.Gun_xRecoil, gun.Gun_xRecoil), 0);
 						CreateGunSmoke();
+
+						if(gun.ShotsBeforeBreak <= 0){
+
+							gun.BreakApart();
+							GetComponent<PlayerGun> ().HeldGun.GetComponent<Collider>().enabled = true;
+							GetComponent<PlayerGun> ().HeldGun.AddComponent<Rigidbody>();
+							GetComponent<PlayerGun> ().HeldGun.transform.parent = null;
+							GetComponent<PlayerGun> ().HeldGun = null;
+						}
 					}
 
 

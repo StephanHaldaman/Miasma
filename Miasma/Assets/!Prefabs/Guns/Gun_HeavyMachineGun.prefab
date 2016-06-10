@@ -601,7 +601,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 154430}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -4.10300016, y: 1.21800005, z: -.407136738}
+  m_LocalPosition: {x: 41.0439987, y: 4.51492548, z: -46.1049995}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 476518}
@@ -1961,6 +1961,23 @@ MonoBehaviour:
   Gun_xRecoil: 5
   Gun_yRecoil: 12.5
   sfx_Shot: {fileID: 8300000, guid: d46d973cffa107342ad558fb1c82d50e, type: 3}
+  ShotsBeforeBreak: 10
+  Parts:
+  - {fileID: 126644}
+  - {fileID: 179798}
+  - {fileID: 103526}
+  - {fileID: 123258}
+  - {fileID: 100930}
+  - {fileID: 104322}
+  - {fileID: 181526}
+  - {fileID: 171764}
+  - {fileID: 102214}
+  - {fileID: 112386}
+  - {fileID: 157478}
+  - {fileID: 103368}
+  - {fileID: 101464}
+  - {fileID: 179710}
+  - {fileID: 119018}
 --- !u!114 &11468026
 MonoBehaviour:
   m_ObjectHideFlags: 1

@@ -21,6 +21,8 @@ public class GunProperties : MonoBehaviour {
 	public float Gun_xRecoil = 1;
 	public float Gun_yRecoil = 1;
 	public AudioClip sfx_Shot;
+	public float ShotsBeforeBreak = 10;
+	public GameObject[] Parts;
 
 	// Use this for initialization
 	void Start () {
@@ -30,5 +32,18 @@ public class GunProperties : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
 	
+	}
+
+	public void BreakApart () {
+		foreach (GameObject part in Parts) {
+			part.transform.parent = null;
+			if(part.GetComponent<MeshCollider>() == null){
+				part.AddComponent<MeshCollider>();
+				part.GetComponent<MeshCollider>().convex = true;
+			}
+			part.AddComponent<Rigidbody>();
+			part.GetComponent<Rigidbody>().collisionDetectionMode = CollisionDetectionMode.ContinuousDynamic;
+			Destroy (gameObject);
+		}
 	}
 }
