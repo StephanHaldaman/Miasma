@@ -34,7 +34,7 @@ GameObject:
   - 114: {fileID: 11461088}
   - 64: {fileID: 6485080}
   - 114: {fileID: 11445364}
-  - 114: {fileID: 11475476}
+  - 114: {fileID: 11475770}
   m_Layer: 0
   m_Name: Part_Leg_Front (2)
   m_TagString: Untagged
@@ -56,7 +56,7 @@ GameObject:
   - 114: {fileID: 11414314}
   - 64: {fileID: 6498940}
   - 114: {fileID: 11402462}
-  - 114: {fileID: 11467276}
+  - 114: {fileID: 11489462}
   m_Layer: 0
   m_Name: Part_Leg_Back (1)
   m_TagString: Untagged
@@ -135,13 +135,12 @@ GameObject:
   - 114: {fileID: 11484362}
   - 195: {fileID: 19549538}
   - 114: {fileID: 11453718}
-  - 114: {fileID: 11473400}
-  - 114: {fileID: 11461716}
   - 114: {fileID: 11452368}
   - 114: {fileID: 11418446}
-  - 114: {fileID: 11477056}
-  - 82: {fileID: 8269292}
-  - 114: {fileID: 11418212}
+  - 114: {fileID: 11461716}
+  - 114: {fileID: 11476042}
+  - 114: {fileID: 11437562}
+  - 82: {fileID: 8216402}
   m_Layer: 9
   m_Name: Animal_Wolf
   m_TagString: Untagged
@@ -224,7 +223,7 @@ GameObject:
   - 114: {fileID: 11499860}
   - 64: {fileID: 6478182}
   - 114: {fileID: 11404380}
-  - 114: {fileID: 11430626}
+  - 114: {fileID: 11487668}
   m_Layer: 0
   m_Name: Part_Leg_Back (2)
   m_TagString: Untagged
@@ -246,7 +245,7 @@ GameObject:
   - 114: {fileID: 11431688}
   - 64: {fileID: 6468258}
   - 114: {fileID: 11466314}
-  - 114: {fileID: 11416342}
+  - 114: {fileID: 11447924}
   m_Layer: 0
   m_Name: Part_Leg_Front (1)
   m_TagString: Untagged
@@ -915,7 +914,7 @@ MeshCollider:
   serializedVersion: 2
   m_Convex: 1
   m_Mesh: {fileID: 0}
---- !u!82 &8269292
+--- !u!82 &8216402
 AudioSource:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
@@ -2967,23 +2966,6 @@ MonoBehaviour:
   m_selectedFaces: 
   m_SelectedEdges: []
   m_selectedTriangles: 
---- !u!114 &11416342
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 192928}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4acb011505d8020478fac213b5c54889, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  pivotAngle: z
-  idleAngle: 270
-  jointAngles:
-  - 300
-  - 240
-  _jointIndex: 0
 --- !u!114 &11416926
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -3836,23 +3818,6 @@ MonoBehaviour:
   m_selectedFaces: 
   m_SelectedEdges: []
   m_selectedTriangles: 
---- !u!114 &11418212
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 161444}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 71c388edc6505f3439ee3a006dd87e19, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  animationSpeed: 50
-  joints:
-  - {fileID: 11416342}
-  - {fileID: 11475476}
-  - {fileID: 11467276}
-  - {fileID: 11430626}
 --- !u!114 &11418446
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -4738,23 +4703,6 @@ MonoBehaviour:
   particles_BloodSpray: {fileID: 19873794, guid: 8248518e560191344856c98b9c3befb3,
     type: 2}
   HealthMax: 1.1
---- !u!114 &11430626
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 186558}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4acb011505d8020478fac213b5c54889, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  pivotAngle: z
-  idleAngle: 270
-  jointAngles:
-  - 300
-  - 240
-  _jointIndex: 0
 --- !u!114 &11430816
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -5717,6 +5665,23 @@ MonoBehaviour:
   m_selectedFaces: 
   m_SelectedEdges: []
   m_selectedTriangles: 
+--- !u!114 &11437562
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 161444}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 71c388edc6505f3439ee3a006dd87e19, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  animationSpeed: 50
+  joints:
+  - {fileID: 11447924}
+  - {fileID: 11475770}
+  - {fileID: 11489462}
+  - {fileID: 11487668}
 --- !u!114 &11444636
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -6205,6 +6170,23 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _entityType: 0
+--- !u!114 &11447924
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 192928}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4acb011505d8020478fac213b5c54889, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  pivotAngle: z
+  idleAngle: 270
+  jointAngles:
+  - 300
+  - 240
+  _jointIndex: 0
 --- !u!114 &11452368
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -6239,9 +6221,9 @@ MonoBehaviour:
   particles_BloodSpray: {fileID: 19873794, guid: 8248518e560191344856c98b9c3befb3,
     type: 2}
   agro: 0
-  activeSpeed: 6
+  activeSpeed: 12
   passiveSpeed: 4
-  alertness: 200
+  alertness: 2000
   awarenessAgro: 2
   calmRate: 1
   damageAgro: 0
@@ -7661,12 +7643,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8257504129dc172449bff50cdf84ec45, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  windUpTime: 0
-  cooldown: 100
-  agroCost: 5
-  range: 3
+  windUpTime: 1
+  cooldown: 1
+  agroCost: 2
+  range: 4
   cooldownTimer: 0
-  damage: 1
+  damage: 5
   attackConeAngle: 45
   attackSound: {fileID: 8300000, guid: 7326fdf6b6d0ee944af02e83ccf39320, type: 3}
 --- !u!114 &11466314
@@ -7696,44 +7678,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _entityType: 0
---- !u!114 &11467276
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 130430}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4acb011505d8020478fac213b5c54889, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  pivotAngle: z
-  idleAngle: 270
-  jointAngles:
-  - 240
-  - 300
-  _jointIndex: 0
---- !u!114 &11473400
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 161444}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: bc792f3fecdbff648bd345b0b6f6e484, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  windUpTime: 0
-  cooldown: 5
-  agroCost: 10
-  range: 3
-  cooldownTimer: 0
-  damage: 0
-  knockbackForce: 200
-  attackConeAngle: 10
-  attackSound: {fileID: 8300000, guid: 7326fdf6b6d0ee944af02e83ccf39320, type: 3}
---- !u!114 &11475476
+--- !u!114 &11475770
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
@@ -7750,7 +7695,7 @@ MonoBehaviour:
   - 240
   - 300
   _jointIndex: 0
---- !u!114 &11477056
+--- !u!114 &11476042
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
@@ -7761,12 +7706,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 83a4dc66258ac5d439fcd6abc0d052d4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  windUpTime: 0
+  windUpTime: 0.2
   cooldown: 10
   agroCost: 10
   range: 20
   cooldownTimer: 0
-  jumpForce: 5
+  jumpForce: 4
   minJumpTime: 0.1
   attackConeAngle: 20
   attackSound: {fileID: 8300000, guid: 7326fdf6b6d0ee944af02e83ccf39320, type: 3}
@@ -8635,6 +8580,40 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   MaxHealth: 30
   Health: 0
+--- !u!114 &11487668
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 186558}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4acb011505d8020478fac213b5c54889, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  pivotAngle: z
+  idleAngle: 270
+  jointAngles:
+  - 300
+  - 240
+  _jointIndex: 0
+--- !u!114 &11489462
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 130430}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4acb011505d8020478fac213b5c54889, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  pivotAngle: z
+  idleAngle: 270
+  jointAngles:
+  - 240
+  - 300
+  _jointIndex: 0
 --- !u!114 &11499860
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -10098,7 +10077,7 @@ CapsuleCollider:
   m_Material: {fileID: 0}
   m_IsTrigger: 1
   m_Enabled: 1
-  m_Radius: 1
+  m_Radius: 1.2
   m_Height: 1
   m_Direction: 1
   m_Center: {x: 0, y: -0.5, z: 0}
@@ -10111,7 +10090,7 @@ NavMeshAgent:
   m_Enabled: 1
   m_Radius: 1
   m_Speed: 3.5
-  m_Acceleration: 8
+  m_Acceleration: 80
   avoidancePriority: 50
   m_AngularSpeed: 120
   m_StoppingDistance: 4
