@@ -7,6 +7,7 @@ public class PlayerGun : MonoBehaviour {
 	
 	public Camera myCamera;
 	public GameObject HeldGun;
+	public GameObject HolsteredGun;
 	public GameObject GunArm;
 	private Transform Pos_Current; //for position only, not rotation	
 	public Transform Pos_GunDown;
@@ -69,16 +70,23 @@ public class PlayerGun : MonoBehaviour {
 
 		if (Input.GetButton ("Fire2")) {
 			if(!AimMode){
-				SetAimMode();
+				//SetAimMode();
 			}
 		} else {
 			if(AimMode){
-				CancelAimMode();
+				//CancelAimMode();
 			}
 		}
 
 		if (HeldGun != null) {
 			Shoot ();
+		}
+
+		if (Input.GetKey (KeyCode.Q)) {
+			GameObject tempHolsteredGun = HolsteredGun;
+			GameObject tempHeldGun = HeldGun;
+			HolsteredGun = HeldGun;
+			HeldGun = tempHolsteredGun;
 		}
 	}
 
