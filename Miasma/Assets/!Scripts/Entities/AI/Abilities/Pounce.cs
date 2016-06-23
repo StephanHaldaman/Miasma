@@ -3,8 +3,8 @@ using System.Collections;
 
 public class Pounce : Ability {
 
-    public float jumpForce;
-    public float minJumpTime = 0.1f;
+    public float pounceSpeed;
+    public float pounceTime = 0.1f;
     public float attackConeAngle;
     public AudioClip attackSound;
 
@@ -30,21 +30,10 @@ public class Pounce : Ability {
 
         yield return new WaitForSeconds(windUpTime);
 
-        nav.enabled = false;
-        GetComponent<Rigidbody>().isKinematic = false;
-
-        GetComponent<Rigidbody>().AddRelativeForce(new Vector3(0, 1, 5) * jumpForce, ForceMode.Impulse);
         GetComponent<AudioSource>().PlayOneShot(attackSound);
-        yield return new WaitForSeconds(minJumpTime);
-        _isJumping = true;
-
-        while (_isJumping) 
-        {
-            yield return new WaitForSeconds(0.1f);
-        }
-
-        GetComponent<Rigidbody>().isKinematic = true;
-        nav.enabled = true;
+        nav.speed = pounceSpeed;
+        yield return new WaitForSeconds(pounceTime);
+        nav.speed = ai.activeSpeed;
     }
 
     void OnCollisionEnter(Collision other)

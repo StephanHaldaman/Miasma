@@ -15,8 +15,6 @@ public class AICombat : AIBehaviour
     // Use Behaviour
     public override void Behave()
     {
-        // Set speed to active
-        nav.speed = ai.activeSpeed;
         nav.SetDestination(ai.lastTargetLocation);
 
         for (int i = 0; i < ai.abilities.Length; i++)

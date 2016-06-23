@@ -100,6 +100,16 @@ public class BaseAI : Entity {
                 _deltaAwareness = 0;
             }
 
+            //Toggle variable so that speed is only set once FIX THIS STUFF
+            if (entityData[i].awareness == 100 && entityData[i].isAware != true)
+            {
+                nav.speed = activeSpeed;
+            }
+            else if (entityData[i].awareness != 100 && entityData[i].isAware == true)
+            {
+                nav.speed = passiveSpeed;
+            }
+
             //Set Awareness
             if (entityData[i].awareness == 100)
             {
